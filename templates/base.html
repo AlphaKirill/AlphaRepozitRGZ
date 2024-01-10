@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block lab %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+    {% block script %}{% endblock %}
+</head>
+<style>
+a {
+    position: relative;
+    margin: 0vw 2.5vw 0vw 2.5vw;
+    text-decoration: none;
+    color:rgb(255, 0, 0);
+}
+
+a:hover {
+    color:rgb(243, 135, 135);
+    font-size: large;
+}
+</style>
+
+<body>
+    <header>
+        WEB-программирование, часть 2. Белкин К.В. ФБИ-11
+    </header>
+
+    <main>
+        {% block main %}{% endblock %}
+    </main>
+
+    <footer>
+        <a class="menu_bt" href="/app/index" target="_self">Главная</a>
+    </footer>
+</body>
+</html>

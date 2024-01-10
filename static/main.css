@@ -1,0 +1,47 @@
+body {
+    background-color: rgb(48, 3, 3);
+    color: rgb(250, 4, 4);
+    font-size: 2vw;
+}
+
+div {
+    margin: 0 3% 0 3%;
+}
+
+h1 {
+    position: relative;
+    left: 15vw;
+}
+
+h2 {
+    position: relative;
+    left: 1vw;
+}
+
+
+ul {
+    text-align: left;
+}
+
+button {
+    cursor: pointer;
+}
+
+.form_register {
+    text-align: center;
+    left: 0vw;
+    position: relative;
+    width: 42vw;
+    height: 36vw;
+}
+
+.movie {
+    position: relative;
+    display: block;
+    text-align: center;
+    border: purple 3px solid;
+    width: fit-content;
+    padding: 0.5vw 2vw 0.5vw 2vw;
+    left: 31vw;
+    border-radius: 16px;
+}

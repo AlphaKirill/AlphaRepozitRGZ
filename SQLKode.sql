@@ -1,0 +1,98 @@
+create user kirill with password 'shprot';
+
+create user admin with password '1234';
+
+select * from users
+
+ALTER USER kirill WITH CREATEROLE;
+
+ALTER DATABASE cinema OWNER TO kirill;
+
+GRANT ALL PRIVILEGES ON DATABASE cinema TO kirill;
+GRANT ALL PRIVILEGES ON TABLE users TO kirill;
+GRANT ALL PRIVILEGES ON TABLE users TO admin; --admin
+GRANT USAGE, SELECT ON SEQUENCE users_id_seq TO kirill;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE users TO kirill;
+GRANT ALL PRIVILEGES ON TABLE cinema_sessions TO kirill;
+GRANT ALL PRIVILEGES ON TABLE cinema_sessions TO admin; --admin
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE cinema_sessions TO kirill;
+GRANT USAGE, SELECT ON SEQUENCE cinema_sessions_session_id_seq TO admin; --admin
+GRANT USAGE, SELECT ON SEQUENCE cinema_sessions_session_id_seq TO kirill;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE users TO kirill;
+
+CREATE TABLE IF NOT EXISTS users (
+ID SERIAL PRIMARY KEY,
+name VARCHAR(255) NOT NULL,
+username VARCHAR(30) UNIQUE NOT NULL,
+password VARCHAR(400) NOT NULL
+);
+
+drop table cinema_sessions
+
+CREATE TABLE cinema_sessions (
+    session_id SERIAL PRIMARY KEY,
+    movie VARCHAR(255) NOT NULL,
+    start_time TIMESTAMP NOT NULL,
+    seat_1 BOOLEAN DEFAULT false,
+	seat_2 BOOLEAN DEFAULT false,
+	seat_3 BOOLEAN DEFAULT false,
+	seat_4 BOOLEAN DEFAULT false,
+	seat_5 BOOLEAN DEFAULT false,
+	seat_6 BOOLEAN DEFAULT false,
+	seat_7 BOOLEAN DEFAULT false,
+	seat_8 BOOLEAN DEFAULT false,
+	seat_9 BOOLEAN DEFAULT false,
+	seat_10 BOOLEAN DEFAULT false,
+	seat_11 BOOLEAN DEFAULT false,
+	seat_12 BOOLEAN DEFAULT false,
+	seat_13 BOOLEAN DEFAULT false,
+	seat_14 BOOLEAN DEFAULT false,
+	seat_15 BOOLEAN DEFAULT false,
+	seat_16 BOOLEAN DEFAULT false,
+	seat_17 BOOLEAN DEFAULT false,
+	seat_18 BOOLEAN DEFAULT false,
+	seat_19 BOOLEAN DEFAULT false,
+	seat_20 BOOLEAN DEFAULT false,
+	seat_21 BOOLEAN DEFAULT false,
+	seat_22 BOOLEAN DEFAULT false,
+	seat_23 BOOLEAN DEFAULT false,
+	seat_24 BOOLEAN DEFAULT false,
+	seat_25 BOOLEAN DEFAULT false,
+	seat_26 BOOLEAN DEFAULT false,
+	seat_27 BOOLEAN DEFAULT false,
+	seat_28 BOOLEAN DEFAULT false,
+	seat_29 BOOLEAN DEFAULT false,
+	seat_30 BOOLEAN DEFAULT false,
+	client_1 VARCHAR(255) DEFAULT NULL,
+    client_2 VARCHAR(255) DEFAULT NULL,
+	client_3 VARCHAR(255) DEFAULT NULL,
+    client_4 VARCHAR(255) DEFAULT NULL,
+	client_5 VARCHAR(255) DEFAULT NULL,
+    client_6 VARCHAR(255) DEFAULT NULL,
+	client_7 VARCHAR(255) DEFAULT NULL,
+    client_8 VARCHAR(255) DEFAULT NULL,
+	client_9 VARCHAR(255) DEFAULT NULL,
+    client_10 VARCHAR(255) DEFAULT NULL,
+	client_11 VARCHAR(255) DEFAULT NULL,
+    client_12 VARCHAR(255) DEFAULT NULL,
+	client_13 VARCHAR(255) DEFAULT NULL,
+    client_14 VARCHAR(255) DEFAULT NULL,
+	client_15 VARCHAR(255) DEFAULT NULL,
+    client_16 VARCHAR(255) DEFAULT NULL,
+	client_17 VARCHAR(255) DEFAULT NULL,
+    client_18 VARCHAR(255) DEFAULT NULL,
+	client_19 VARCHAR(255) DEFAULT NULL,
+    client_20 VARCHAR(255) DEFAULT NULL,
+	client_21 VARCHAR(255) DEFAULT NULL,
+	client_22 VARCHAR(255) DEFAULT NULL,
+	client_23 VARCHAR(255) DEFAULT NULL,
+    client_24 VARCHAR(255) DEFAULT NULL,
+	client_25 VARCHAR(255) DEFAULT NULL,
+    client_26 VARCHAR(255) DEFAULT NULL,
+	client_27 VARCHAR(255) DEFAULT NULL,
+    client_28 VARCHAR(255) DEFAULT NULL,
+	client_29 VARCHAR(255) DEFAULT NULL,
+    client_30 VARCHAR(255) DEFAULT NULL
+);
+
+SELECT session_id FROM cinema_sessions;

@@ -39,9 +39,9 @@ button {
     position: relative;
     display: block;
     text-align: center;
-    border: purple 3px solid;
+    border: rgb(250, 5, 5) 3px solid;
     width: fit-content;
     padding: 0.5vw 2vw 0.5vw 2vw;
     left: 31vw;
-    border-radius: 16px;
+    border-radius: 6px;
 }
